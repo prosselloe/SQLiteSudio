@@ -41,7 +41,8 @@
 
       SELECT designation,COUNT(*) AS nbr, (AVG(salary)) AS avg_salary FROM employees 
         GROUP BY designation ORDER BY avg_salary DESC;
-      SELECT name,hired_on FROM employees ORDER BY hired_on;
+      SELECT name,hired_on FROM employees 
+        ORDER BY hired_on;
     </textarea>
 
     <button id="execute" class="button">Execute</button>
