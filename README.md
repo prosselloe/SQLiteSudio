@@ -1,4 +1,4 @@
-  <h1>SQLite Sudio</h1>
+<h1>SQLite Sudio</h1>
 
   <main>
     <label for='commands'>Enter some 
