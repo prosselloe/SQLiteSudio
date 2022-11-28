@@ -2,27 +2,27 @@
 
   <main>
     <label for='commands'>Enter some 
-        <a href="https://www.w3schools.com/sql/default.asp">SQL</a></label> (
-        <a href="https://www.w3schools.com/sql/sql_select.asp">SELECT</a>, 
-        <a href="https://www.w3schools.com/sql/sql_update.asp">UPDATE</a>, 
-        <a href="https://www.w3schools.com/sql/sql_delete.asp">DELETE</a>, 
-        <a href="https://www.w3schools.com/sql/sql_insert.asp">INSERT INTO</a>, 
-        <a href="https://www.w3schools.com/sql/sql_where.asp">WHERE</a>, 
-        <a href="https://www.w3schools.com/sql/sql_orderby.asp">ORDER BY</a>, 
-        <a href="https://www.w3schools.com/sql/sql_groupby.asp">GROUP BY</a>, 
-        <a href="https://www.w3schools.com/sql/sql_having.asp">HAVING</a>, 
-        <a href="https://www.w3schools.com/sql/sql_min_max.asp">MIN()</a>, 
-        <a href="https://www.w3schools.com/sql/sql_count_avg_sum.asp">COUNT()</a>, 
-        <a href="https://www.w3schools.com/sql/sql_join_inner.asp">INNER JOIN</a>, 
-        <a href="https://www.w3schools.com/sql/sql_create_table.asp">TABLE</a> )
+      <a href="https://www.w3schools.com/sql/default.asp">SQL</a></label> (
+      <a href="https://www.w3schools.com/sql/sql_select.asp">SELECT</a>, 
+      <a href="https://www.w3schools.com/sql/sql_update.asp">UPDATE</a>, 
+      <a href="https://www.w3schools.com/sql/sql_delete.asp">DELETE</a>, 
+      <a href="https://www.w3schools.com/sql/sql_insert.asp">INSERT INTO</a>, 
+      <a href="https://www.w3schools.com/sql/sql_where.asp">WHERE</a>, 
+      <a href="https://www.w3schools.com/sql/sql_orderby.asp">ORDER BY</a>, 
+      <a href="https://www.w3schools.com/sql/sql_groupby.asp">GROUP BY</a>, 
+      <a href="https://www.w3schools.com/sql/sql_having.asp">HAVING</a>, 
+      <a href="https://www.w3schools.com/sql/sql_min_max.asp">MIN()</a>, 
+      <a href="https://www.w3schools.com/sql/sql_count_avg_sum.asp">COUNT()</a>, 
+      <a href="https://www.w3schools.com/sql/sql_join_inner.asp">INNER JOIN</a>, 
+      <a href="https://www.w3schools.com/sql/sql_create_table.asp">TABLE</a> )
     <br>
 
     <textarea id="commands">
       DROP TABLE IF EXISTS employees;
-      CREATE TABLE employees( id          integer,  name    text,
-                              designation text,     manager integer,
-                              hired_on    date,     salary  integer,
-                              commission  float,    dept    integer);
+      CREATE TABLE employees(id          integer,  name    text,
+                             designation text,     manager integer,
+                             hired_on    date,     salary  integer,
+                             commission  float,    dept    integer);
 
       INSERT INTO employees VALUES (1,'JOHNSON','ADMIN',6,'1990-12-17',18000,NULL,4);
       INSERT INTO employees VALUES (2,'HARDING','MANAGER',9,'1998-02-02',52000,300,3);
@@ -40,9 +40,9 @@
       INSERT INTO employees VALUES (14,'ROOSEVELT','CPA',9,'1995-10-12',35000,NULL,1);
 
       SELECT designation,COUNT(*) AS nbr, (AVG(salary)) AS avg_salary FROM employees 
-        GROUP BY designation ORDER BY avg_salary DESC;
+             GROUP BY designation ORDER BY avg_salary DESC;
       SELECT name,hired_on FROM employees 
-        ORDER BY hired_on;
+             ORDER BY hired_on;
     </textarea>
 
     <button id="execute" class="button">Execute</button>
