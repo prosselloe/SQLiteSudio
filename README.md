@@ -1,4 +1,4 @@
-<h1><a href="SQLite Sudio"</a></h1>
+<h1><a href="https://sqlitesudio-github.netlify.app">SQLite Sudio</a></h1>
   <main>
     <label for='commands'>Enter some 
       <a href="https://www.w3schools.com/sql/default.asp">SQL</a></label> (
