@@ -1,6 +1,7 @@
 <h1><a href="https://sqlitesudio-github.netlify.app">SQLite Sudio</a></h1>
   <main>
-    <label for='commands'>Enter some 
+      <img src="captura.jpg" id="captura">
+      <label for='commands'>Enter some 
       <a href="https://www.w3schools.com/sql/default.asp">SQL</a></label> (
       <a href="https://www.w3schools.com/sql/sql_select.asp">SELECT</a>, 
       <a href="https://www.w3schools.com/sql/sql_update.asp">UPDATE</a>, 
@@ -14,7 +15,7 @@
       <a href="https://www.w3schools.com/sql/sql_count_avg_sum.asp">COUNT()</a>, 
       <a href="https://www.w3schools.com/sql/sql_join_inner.asp">INNER JOIN</a>, 
       <a href="https://www.w3schools.com/sql/sql_create_table.asp">TABLE</a> )
-      <pre id="SQL">
+      <pre id="sql">
       DROP TABLE IF EXISTS employees;
       CREATE TABLE employees(id          integer,  name    text,
                              designation text,     manager integer,
