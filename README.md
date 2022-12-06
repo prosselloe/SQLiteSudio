@@ -15,7 +15,6 @@
       <a href="https://www.w3schools.com/sql/sql_join_inner.asp">INNER JOIN</a>, 
       <a href="https://www.w3schools.com/sql/sql_create_table.asp">TABLE</a> )
     <br>
-
       DROP TABLE IF EXISTS employees;
       CREATE TABLE employees(id          integer,  name    text,
                              designation text,     manager integer,
@@ -41,15 +40,16 @@
              GROUP BY designation ORDER BY avg_salary DESC;
       SELECT name,hired_on FROM employees 
              ORDER BY hired_on;
-
-    <button id="execute" class="button">Execute</button>
-    <button id='savedb' class="button">Save the db</button>
-    <label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
-    <button id='tables' class="button">Tables</button>
-    <button id='indexes' class="button">Indexes</button>
-    <button id='relationships' class="button">Relationships</button>
-    <div id="error" class="error"></div>
-    <pre id="output">Results will be displayed here</pre>
+    <br>	
+    <pre id="buttons">
+	    <button id="execute" class="button">Execute</button>
+	    <button id='savedb' class="button">Save the db</button>
+	    <label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
+	    <button id='tables' class="button">Tables</button>
+	    <button id='indexes' class="button">Indexes</button>
+	    <button id='relationships' class="button">Relationships</button>
+	    <div id="error" class="error"></div>
+    </pre>
   </main>
 <h1>Chinook sample database</h1>
     <pre id="output"><table><thead><tr><th>name</th><th>sql</th></tr></thead><tbody><tr><td><button onclick="tabledata('SELECT * FROM albums;')">albums </button></td><td>CREATE TABLE "albums"
@@ -161,7 +161,8 @@
 		ON DELETE NO ACTION ON UPDATE NO ACTION,
     FOREIGN KEY ([MediaTypeId]) REFERENCES "media_types" ([MediaTypeId]) 
 		ON DELETE NO ACTION ON UPDATE NO ACTION
-)</td></tr><tr><td><button onclick="tabledata('SELECT * FROM sqlite_stat1;')">sqlite_stat1 </button></td><td>CREATE TABLE sqlite_stat1(tbl,idx,stat)</td></tr></tbody></table></pre>
+)</td></tr><tr><td><button onclick="tabledata('SELECT * FROM sqlite_stat1;')">sqlite_stat1 </button></td><td>CREATE TABLE sqlite_stat1(tbl,idx,stat)</td></tr></tbody></table>
+    </pre>
   </main>
   <footer>
     Original work by kripken (<a href="https://github.com/sql-js/sql.js">sql.js</a>).
