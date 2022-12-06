@@ -14,7 +14,7 @@
       <a href="https://www.w3schools.com/sql/sql_count_avg_sum.asp">COUNT()</a>, 
       <a href="https://www.w3schools.com/sql/sql_join_inner.asp">INNER JOIN</a>, 
       <a href="https://www.w3schools.com/sql/sql_create_table.asp">TABLE</a> )
-      <p>
+      <pre id="SQL">
       DROP TABLE IF EXISTS employees;
       CREATE TABLE employees(id          integer,  name    text,
                              designation text,     manager integer,
@@ -40,7 +40,7 @@
              GROUP BY designation ORDER BY avg_salary DESC;
       SELECT name,hired_on FROM employees 
              ORDER BY hired_on;
-      </p>	
+      </pre>	
       <img src="buttons.jpg" id="buttons">
   </main>
 <h1><a href="sql.db">SQL.db Default Database</a></h1>
