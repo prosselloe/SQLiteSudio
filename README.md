@@ -43,7 +43,8 @@
 	
      <img src="Buttons.jpg" id="Buttons">
   </main>
-<h1>Chinook Sample Database</h1>
+<h1><a href="sql.db">SQL.db</a> Default Database<</h1>
+<h1><a href="chinook.db">Chinook.db</a> Sample Database</h1>
     <pre id="output"><table><thead><tr><th>name</th><th>sql</th></tr></thead><tbody><tr><td><button onclick="tabledata('SELECT * FROM albums;')">albums </button></td><td>CREATE TABLE "albums"
 (
     [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
