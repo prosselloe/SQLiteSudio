@@ -15,7 +15,7 @@
       <a href="https://www.w3schools.com/sql/sql_join_inner.asp">INNER JOIN</a>, 
       <a href="https://www.w3schools.com/sql/sql_create_table.asp">TABLE</a> )
     <br>
-    <div id="commands">
+
       DROP TABLE IF EXISTS employees;
       CREATE TABLE employees(id          integer,  name    text,
                              designation text,     manager integer,
@@ -41,7 +41,7 @@
              GROUP BY designation ORDER BY avg_salary DESC;
       SELECT name,hired_on FROM employees 
              ORDER BY hired_on;
-    </div>
+
     <button id="execute" class="button">Execute</button>
     <button id='savedb' class="button">Save the db</button>
     <label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
