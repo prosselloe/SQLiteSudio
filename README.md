@@ -1,4 +1,4 @@
-<h1>SQLite Sudio</h1>
+<h1><a href="SQLite Sudio</a></h1>
   <main>
     <label for='commands'>Enter some 
       <a href="https://www.w3schools.com/sql/default.asp">SQL</a></label> (
@@ -43,8 +43,8 @@
 	
      <img src="Buttons.jpg" id="Buttons">
   </main>
-<h1><a href="sql.db">SQL.db</a> Default Database</h1>
-<h1><a href="chinook.db">Chinook.db</a> Sample Database</h1>
+<h1><a href="sql.db">SQL.db Default Database</a></h1>
+<h1><a href="chinook.db">Chinook.db Sample Database</a></h1>
     <pre id="output"><table><thead><tr><th>name</th><th>sql</th></tr></thead><tbody><tr><td><button onclick="tabledata('SELECT * FROM albums;')">albums </button></td><td>CREATE TABLE "albums"
 (
     [AlbumId] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
