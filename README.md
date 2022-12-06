@@ -41,15 +41,7 @@
       SELECT name,hired_on FROM employees 
              ORDER BY hired_on;
 	
-    <pre id="buttons">
-	    <button id="execute" class="button">Execute</button>
-	    <button id='savedb' class="button">Save the db</button>
-	    <label class="button">Load an SQLite database file: <input type='file' id='dbfile'></label>
-	    <button id='tables' class="button">Tables</button>
-	    <button id='indexes' class="button">Indexes</button>
-	    <button id='relationships' class="button">Relationships</button>
-	    <div id="error" class="error"></div>
-    </pre>
+     <img src="Buttons.jpg" id="Buttons">
   </main>
 <h1>Chinook Sample Database</h1>
     <pre id="output"><table><thead><tr><th>name</th><th>sql</th></tr></thead><tbody><tr><td><button onclick="tabledata('SELECT * FROM albums;')">albums </button></td><td>CREATE TABLE "albums"
