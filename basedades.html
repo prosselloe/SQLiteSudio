@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+Versió γ: Versió amb Base de Dades Joc del Penjat: basedades.html i basedades.js
+-->
+<html>
+    <head>
+        <title>Versió amb Base de Dades Joc del Penjat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="penjat.css">
+        <script src="basedades.js"></script>
+        
+        <!--
+        Llibreries per la càrrega de bases de dades
+        -->
+        <script src="alasql.js"></script>
+        <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+        <script src='sql-wasm.js'></script>
+    </head>
+    <body onload="setTimeout(AmagaImg, 1000); document.getElementById('mystery').play();"
+          style="display: none; background-image: url('img/Desert.png'); 
+          background-size: 640px 480px; background-repeat: no-repeat;">
+        <script>
+            // Dificultam la visualització del codi font.
+            document.oncontextmenu = function() { return false; }
+            function KeyPress(e) {
+                var evObject = window.event? event : e;
+                if (evObject.keyCode != 13 && evObject.ctrlKey) { return false; }
+            }
+            document.onkeydown = KeyPress;
+            
+            // Captura de la tecla ENTER del teclat.
+            window.onkeypress = function(evObject) {
+                if (evObject.keyCode == 13) { Comprovar(); }
+            }
+
+            if (confirm("Let's go: a la quinta forca / al quinto pino / to the boondocks?") == false) {
+                document.body.style.backgroundImage = "url('img/fondo1.png')";
+            }
+            // document.getElementById("lletra").focus();
+
+            // Comptador de temps al joc.
+            var seconds = 0;
+            function timer() {
+                seconds = seconds + 1;
+                document.getElementById("Segons").innerHTML = seconds;
+            }
+            setInterval(timer, 1000);
+            
+            // Carregam la base de dades penjat.db per l'idioma català
+            AlaWeb_SQLite('ca');
+        </script>
+        <div id="res"></div>
+        <h1 id="Versio">Versió γ Joc del Penjat</h1>
+        <table>
+            <tr>
+              <td>
+                    <input id="lletra" type="text" 
+                           placeholder="Escriu una lletra minúscula" maxlength="1"> 
+                    <button id="comprovar" onclick="Comprovar();">Comprovar</button>
+                <h2><span id="Paraula">Paraula:</span>
+                    <a href="https://prosselloe.wordpress.com/?p=5970" target="_blank">
+                        <font size=3 translate="no"><span id="Sopes">Demanes sopes?</span></font></a></h2>
+                    <div id="paraula" style="color: white;">
+                        <strong>_,_,_,_,_,_,_</strong></div>
+                <h2><span id="Vides">Vides:</span>
+                    <a href="https://pccd.dites.cat/p/Tenir_set_vides%2C_com_els_gats" target="_blank">
+                        <font size=3 translate="no"><span id="Moix">Un moix en té set?</span></font></a></h2>
+                    <div id="vides" style="color: yellow;">
+                        <strong>&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_</strong></div>
+                <h2><span id="Lletres">Lletres:</span>
+                    <a href="https://pccd.dites.cat/p/De_lletres" target="_blank">
+                        <font size=3 translate="no"><span id="Ets">Ets de lletres?</span></font></a></h2>
+                    <div id="lletres" style="color: red;">
+                        <strong>_,_,_,_,_,_,_</strong></div>
+            </td>
+            <td>
+                <img src="img/ahorcado_6.png" id="ahorcado_6" style="width:280px;height:270px;" 
+                     title="Et queden 6 vides!">
+                <img src="img/ahorcado_5.png" id="ahorcado_5" style="width:280px;height:270px;"
+                     title="Et queden 5 vides!">
+                <img src="img/ahorcado_4.png" id="ahorcado_4" style="width:280px;height:270px;"
+                     title="Et queden 4 vides!">
+                <img src="img/ahorcado_3.png" id="ahorcado_3" style="width:280px;height:270px;"
+                     title="Et queden 3 vides!">
+                <img src="img/ahorcado_2.png" id="ahorcado_2" style="width:280px;height:270px;"
+                     title="Et queden 2 vides!">
+                <img src="img/ahorcado_1.png" id="ahorcado_1" style="width:280px;height:270px;"
+                     title="Et queda 1 vida!">
+                <img src="img/ahorcado_0.png" id="ahorcado_0" style="width:280px;height:270px;" 
+                     title="En pau descansi - RIP!">
+                <a href="img/ahorcado.jpg">
+                <img src="img/ahorcado.jpg" id="ahorcado" style="width:234px;height:270px;"></a>
+            </td>          
+          </tr>
+          <tr>
+            <td>
+                <br>
+                <strong translate="no"><span id="URLpistes">URLpistes:</span> 
+                    <a id="Dita1" href="https://pccd.dites.cat/p/A_la_quinta_forca" target="_blank"
+                       title="A la quinta forca, ">
+                       <span id="Dita_1">Dita 1</span></a>
+                    <a id="Dita2" href="https://pccd.dites.cat/p/A_ca_un_penjat%2C_no_hi_anomenis_cordes" target="_blank"
+                       title="A ca un penjat, no hi anomenis cordes, ">
+                       <span id="Dita_2">Dita 2</span></a>
+                    <a id="Dita3" href="https://pccd.dites.cat/p/Setze_jutges_d%27un_jutjat_mengen_fetge_d%27un_penjat" target="_blank"
+                       title="Setze jutges d'un jutjat mengen fetge d'un penjat, ...">
+                       <span id="Dita_3">Dita 3</span></a>
+                </strong>
+                <p><strong><span id="Credits">Crèdits:</span>  
+                    <a href="https://prosselloe.wordpress.com/?p=5862" target="_blank">
+                       <span id="Scratch">Joc Penjat on Scratch</span></a>
+                </strong></p>
+            </td>          
+            <td>
+                <br>
+                <strong>YouTube: 
+                    <a href="https://youtu.be/v53rEMHghJU?list=PLv1JHCp6B60w_KnMTu7jDdlDZ6Z0-WJ-j" target="_blank">
+                       <span id="YouTube">Joc Penjat on Scratch</span></a>
+                </strong>
+                <p><strong translate="no">Wikis: 
+                    <a href="https://ca.wikipedia.org/wiki/Penjat" target="_blank"
+                       title="Regles del joc">Penjat</a>
+                    <a href="https://es.wikipedia.org/wiki/Ahorcado_(juego)" target="_blank"
+                       title="Reglas del juego">Ahorcado</a>
+                    <a href="https://en.wikipedia.org/wiki/Hangman_(game)" target="_blank"
+                       title="Game rules">Hangman</a>
+                </strong></p>
+            </td>          
+          </tr>
+        </table>
+        <div id="Idioma" translate="no">
+            <button style="height: 20px; width: 28px" onclick="CanviarIdioma('ca')">
+                <img src="img/ca.png" alt="tra_ca" title="en Català"></button>
+            <button style="height: 20px; width: 28px" onclick="CanviarIdioma('es')">
+                <img src="img/es.png" alt="tra_es" title="en Español"></button>
+            <button style="height: 20px; width: 28px" onclick="CanviarIdioma('en')">
+                <img src="img/gb.png" alt="tra_en" title="in English"></button>
+            &nbsp;&nbsp;&nbsp;
+            <a href="https://dlc.iec.cat/" target="_blank">
+                <img src="img/ca.png" alt="dic_ca" title="Diccionari"></a>
+            <a href="https://dle.rae.es/" target="_blank">
+                <img src="img/es.png" alt="dic_es" title="Diccionario"></a>
+            <a href="https://www.wordreference.com/definition/" target="_blank">
+                <img src="img/gb.png" alt="dic_en" title="Dictionary"></a>
+            &nbsp;&nbsp;&nbsp;
+            <button id="teclat" onclick="document.getElementById('Teclat').hidden = 
+                                        !document.getElementById('Teclat').hidden;" title="Mostra o Amaga">
+                <img src="img/keyboard.png" alt="teclat"></button>
+        </div>
+        <!--
+        Including HTML is done by using a w3-include-html attribute
+        -->
+        <div w3-include-html="penjat.html"></div> 
+        <!--
+        Call includeHTML() at the bottom of the page
+        -->
+        <script>
+            includeHTML();
+        </script> 
+    </body>
+</html>
