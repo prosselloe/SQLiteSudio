@@ -1,6 +1,6 @@
 <h1><a href="https://sqlitesudio-github.netlify.app">SQLite Sudio</a></h1>
   <main>
-      <img src="captura.jpg" id="captura">
+      <img src="img/captura.jpg" id="captura">
       <label for='commands'>Enter some 
       <a href="https://www.w3schools.com/sql/default.asp">SQL</a></label> (
       <a href="https://www.w3schools.com/sql/sql_select.asp">SELECT</a>, 
@@ -42,7 +42,7 @@
       SELECT name,hired_on FROM employees 
              ORDER BY hired_on;
       </pre>	
-      <img src="buttons.jpg" id="buttons">
+      <img src="img/buttons.jpg" id="buttons">
   </main>
 <h1><a href="sql.db">SQL.db Default Database</a></h1>
     <pre id="output"><table><thead><tr><th>designation</th><th>nbr</th><th>avg_salary</th></tr></thead><tbody><tr><td>CEO</td><td>1</td><td>75000</td></tr><tr><td>MANAGER</td><td>3</td><td>54000</td></tr><tr><td>CPA</td><td>1</td><td>35000</td></tr><tr><td>ENGINEER</td><td>3</td><td>32000</td></tr><tr><td>SALES I</td><td>2</td><td>26000</td></tr><tr><td>TECH</td><td>2</td><td>23750</td></tr><tr><td>ADMIN</td><td>2</td><td>18000</td></tr></tbody></table><table><thead><tr><th>name</th><th>hired_on</th></tr></thead><tbody><tr><td>JACKSON</td><td>1990-01-01</td></tr><tr><td>HOOVER</td><td>1990-04-02</td></tr><tr><td>JOHNSON</td><td>1990-12-17</td></tr><tr><td>GARFIELD</td><td>1993-05-01</td></tr><tr><td>LINCOLN</td><td>1994-06-23</td></tr><tr><td>FILLMORE</td><td>1994-08-09</td></tr><tr><td>ROOSEVELT</td><td>1995-10-12</td></tr><tr><td>TAFT</td><td>1996-01-02</td></tr><tr><td>ADAMS</td><td>1996-03-15</td></tr><tr><td>GRANT</td><td>1997-03-30</td></tr><tr><td>POLK</td><td>1997-09-22</td></tr><tr><td>HARDING</td><td>1998-02-02</td></tr><tr><td>WASHINGTON</td><td>1998-04-16</td></tr><tr><td>MONROE</td><td>2000-12-03</td></tr></tbody></table>
