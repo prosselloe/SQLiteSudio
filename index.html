@@ -10,8 +10,11 @@
 </head>
 
 <body>
-  <h1>SQLite Sudio</h1>
-
+  <h1>SQLite Sudio&nbsp;
+      <audio controls> <source src="aud/SQL.mp3" type="audio/mpeg">
+          Your browser does not support the <code>audio</code> tag.
+      </audio>
+  </h1>
   <main>
       <label for='commands'>Enter some 
         <a href="https://www.w3schools.com/sql/default.asp">SQL</a></label> (
@@ -26,7 +29,7 @@
         <a href="https://www.w3schools.com/sql/sql_min_max.asp">MIN()</a>, 
         <a href="https://www.w3schools.com/sql/sql_count_avg_sum.asp">COUNT()</a>, 
         <a href="https://www.w3schools.com/sql/sql_join_inner.asp">INNER JOIN</a>, 
-        <a href="https://www.w3schools.com/sql/sql_create_table.asp">TABLE</a> )
+        <a href="https://www.w3schools.com/sql/sql_create_table.asp">CREATE TABLE</a> )
     <br>
 
     <textarea id="commands">DROP TABLE IF EXISTS employees;
@@ -60,7 +63,7 @@ SELECT name,hired_on FROM employees ORDER BY hired_on;</textarea>
     <button id='tables' class="button">Tables</button>
     <button id='indexes' class="button">Indexes</button>
     <button id='relationships' class="button">Relationships</button>
-       
+    
     <div id="error" class="error"></div>
 
     <pre id="output">Results will be displayed here</pre>
